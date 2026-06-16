@@ -280,6 +280,8 @@ a { color: var(--accent); }
   visibility: visible;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               visibility 0s linear 0s;
+  height: fit-content;
+  width: fit-content;
 }
 
 .main-nav a {
@@ -703,10 +705,6 @@ a { color: var(--accent); }
 
 .t-full-card .t-quote strong { color: var(--accent-deep); }
 
-@media (min-width: 760px) {
-  .t-masonry { columns: 2; }
-}
-
 /* ===== FAQ ===== */
 .faq-list { margin-top: 32px; display: grid; gap: 12px; }
 
@@ -986,7 +984,8 @@ a { color: var(--accent); }
 .wa-float:hover { background: var(--wa-deep); transform: translateY(-2px); }
 
 /* ===== Desktop: reset mobile nav to horizontal bar ===== */
-@media (min-width: 760px) {
+@media (min-width: 1085px) {
+  .t-masonry { columns: 2; }
   .nav-toggle { display: none; }
   .nav-backdrop { display: none !important; }
 
