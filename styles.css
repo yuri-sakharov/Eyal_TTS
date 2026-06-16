@@ -131,7 +131,7 @@ body {
 
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: var(--body-size);
   line-height: 1.65;
   color: var(--ink);
@@ -139,7 +139,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.18; text-wrap: balance; }
+h1, h2, h3 {
+  font-family: var(--font-head), serif; font-weight: 700; line-height: 1.18; text-wrap: balance; }
 
 p { text-wrap: pretty; }
 
@@ -182,7 +183,7 @@ a { color: var(--accent); }
 }
 
 .logo .logo-en {
-  font-family: var(--font-head);
+  font-family: var(--font-head), serif;
   font-weight: 700;
   font-size: 21px;
   letter-spacing: 0.02em;
@@ -333,7 +334,7 @@ a { color: var(--accent); }
   border-radius: 14px;
   background: var(--accent);
   color: #fff;
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
@@ -478,7 +479,7 @@ a { color: var(--accent); }
 
 .step-num {
   grid-row: span 2;
-  font-family: var(--font-head);
+  font-family: var(--font-head), serif;
   font-size: 44px;
   font-weight: 700;
   line-height: 1;
@@ -579,9 +580,11 @@ a { color: var(--accent); }
 
 .t-quote { font-size: 17px; color: var(--ink); }
 
-.t-quote::before { content: "״"; color: var(--accent); font-family: var(--font-head); }
+.t-quote::before { content: "״"; color: var(--accent);
+  font-family: var(--font-head), serif; }
 
-.t-quote::after { content: "״"; color: var(--accent); font-family: var(--font-head); }
+.t-quote::after { content: "״"; color: var(--accent);
+  font-family: var(--font-head), serif; }
 
 .t-more { margin-top: 28px; text-align: center; }
 
@@ -705,13 +708,14 @@ a { color: var(--accent); }
   margin: 28px 0;
   padding-inline-start: 18px;
   border-inline-start: 3px solid color-mix(in oklab, var(--accent) 40%, white);
-  font-family: var(--font-head);
+  font-family: var(--font-head), serif;
   font-size: 20px;
   line-height: 1.55;
   max-width: 46ch;
 }
 
-.contact-pull footer { font-family: var(--font-body); font-size: 15px; opacity: 0.85; margin-top: 8px; }
+.contact-pull footer {
+  font-family: var(--font-body), sans-serif; font-size: 15px; opacity: 0.85; margin-top: 8px; }
 
 .contact-grid { display: grid; gap: 36px; align-items: start; }
 
@@ -730,7 +734,7 @@ a { color: var(--accent); }
 .field label { font-weight: 700; font-size: 16px; }
 
 .field input, .field textarea {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: 17px;
   color: var(--ink);
   background: var(--bg);
@@ -820,7 +824,7 @@ a { color: var(--accent); }
 .cat-nav a:hover { border-color: var(--accent-line); background: var(--accent-tint); color: var(--accent-deep); }
 
 .cat-nav a .cat-n {
-  font-family: var(--font-head);
+  font-family: var(--font-head), serif;
   color: var(--accent);
   font-size: 15px;
 }
@@ -832,7 +836,7 @@ a { color: var(--accent); }
 .cat-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 6px; }
 
 .cat-head .cat-num {
-  font-family: var(--font-head);
+  font-family: var(--font-head), serif;
   font-size: 40px;
   font-weight: 700;
   color: var(--accent);
