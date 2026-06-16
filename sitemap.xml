@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.eyaltts.com/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/"/>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/65e506_abe49775fb5849b79ac37eda87bf4d67~mv2.jpg/v1/fill/w_1200,h_960,al_c,q_85,enc_avif,quality_auto/header2025.jpg</image:loc>
+      <image:title>טיול עצמאי בטייוואן — Eyal TTS</image:title>
+    </image:image>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.eyaltts.com/taiwan</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/taiwan"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/taiwan?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/taiwan"/>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/65e506_ec1d5f242b044ad8b13d9fe1c02615e4~mv2.jpg/v1/fill/w_1200,h_960,al_c,q_85,enc_avif,quality_auto/main5.jpg</image:loc>
+      <image:title>טייוואן למטייל העצמאי — יעדים ומסלולים</image:title>
+    </image:image>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.eyaltts.com/eyalraanan</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/eyalraanan"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/eyalraanan?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/eyalraanan"/>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/65e506_c0a6d009bc5a4062b3e0e76a10d49a03~mv2.jpg/v1/fill/w_900,h_900,al_c,q_85,enc_avif,quality_auto/eyalraanan3.jpg</image:loc>
+      <image:title>איל רענן — מתכנן טיולים לטייוואן</image:title>
+    </image:image>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eyaltts.com/faq</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/faq?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/faq"/>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eyaltts.com/testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/testimonials"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/testimonials?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/testimonials"/>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.eyaltts.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/contact?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/contact"/>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
