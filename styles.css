@@ -87,8 +87,6 @@ body {
 
 .h-icon:hover { background: var(--accent-tint); color: var(--accent-deep); }
 
-.h-icon.h-wa:hover { background: #dcfce7; color: #166534; }
-
 .h-tooltip {
   position: absolute;
   top: calc(100% + 8px);
@@ -137,6 +135,7 @@ body {
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
@@ -154,6 +153,68 @@ a { color: var(--accent); }
 
 /* Wrap: safe-area aware */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: max(20px, calc(env(safe-area-inset-left, 0px) + 16px)); }
+.wrap-narrow { max-width: 780px; }
+
+.values-stack { display: grid; gap: 28px; margin-top: 28px; }
+
+.page-h1 { font-size: clamp(28px, 6vw, 40px); margin-bottom: 18px; }
+
+.section-no-bottom { padding-bottom: 0; }
+
+.btn-block { width: 100%; justify-content: center; }
+
+.cta-secondary-row { margin-top: 14px; }
+
+.about-photo-tall { height: clamp(320px, 60vw, 460px); }
+
+.press-photo {
+  width: 100%;
+  height: clamp(240px, 45vw, 360px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  box-shadow: 0 14px 36px rgba(40, 36, 26, 0.14);
+}
+
+.press-photo-wrap { margin-top: 28px; }
+
+.testimonial-grid-tight { margin-top: 28px; }
+.testimonial-grid-mid { margin-top: 32px; }
+.value-grid-mid { margin-top: 32px; }
+.t-more-tight { margin-top: 24px; }
+.contact-pull-spaced { margin-top: 28px; }
+
+.reviews-h1 { font-size: clamp(30px, 6.5vw, 44px); margin-bottom: 12px; }
+
+.strip-grid-five { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 600px) { .strip-grid-five { grid-template-columns: repeat(2, 1fr); } }
+
+.socket-row { display: flow-root; }
+.socket-cap strong { color: var(--ink); }
+.text-soft { color: var(--ink-soft); }
+
+.phone-input { text-align: right; }
+
+.contact h1 { font-size: clamp(28px, 6vw, 40px); margin-bottom: 12px; }
+
+.contact-aside p { color: rgba(255, 255, 255, 0.85); font-size: 17px; margin-bottom: 6px; }
+.contact-aside p strong { color: #fff; }
+
+.next-steps {
+  margin-top: 28px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.next-steps-title { color: #fff; font-weight: 700; font-size: 17px; margin-bottom: 10px; }
+.next-steps-list {
+  padding-inline-start: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  display: grid;
+  gap: 8px;
+}
 
 .ltr { direction: ltr; unicode-bidi: isolate; }
 
