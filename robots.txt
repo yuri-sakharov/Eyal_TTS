@@ -1,7 +1,7 @@
 # robots.txt — eyaltts.com
 # Eyal TTS — טיול עצמאי בטייוואן, מתוכנן אישית בעברית.
 # The site's job is to be found. Crawlers and AI answer engines are welcome.
-# Structured summary for LLMs: /llms.txt  ·  Full corpus: /llms-full.txt
+# Structured summary for LLMs: /llms.txt · Full corpus: /llms-full.txt
 
 User-agent: *
 Allow: /
