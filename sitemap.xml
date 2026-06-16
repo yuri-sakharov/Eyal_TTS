@@ -51,10 +51,10 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.eyaltts.com/testimonials</loc>
-    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/testimonials"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/testimonials?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/testimonials"/>
+    <loc>https://www.eyaltts.com/reviews</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/reviews"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/reviews?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/reviews"/>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

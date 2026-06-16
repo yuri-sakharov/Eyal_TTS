@@ -159,7 +159,7 @@ a { color: var(--accent); }
 
 .page-h1 { font-size: clamp(28px, 6vw, 40px); margin-bottom: 18px; }
 
-.section-no-bottom { padding-bottom: 0; }
+@media (max-width: 600px) { .section.section-no-bottom { padding-bottom: 0; } .section.section { padding-top: 0; }  }
 
 .btn-block { width: 100%; justify-content: center; }
 
@@ -186,8 +186,8 @@ a { color: var(--accent); }
 
 .reviews-h1 { font-size: clamp(30px, 6.5vw, 44px); margin-bottom: 12px; }
 
-.strip-grid-five { grid-template-columns: repeat(5, 1fr); }
-@media (max-width: 600px) { .strip-grid-five { grid-template-columns: repeat(2, 1fr); } }
+.strip-grid.strip-grid-five { grid-template-columns: repeat(5,1fr); }
+@media (max-width: 600px) { .strip-grid.strip-grid-five { display: none; } }
 
 .socket-row { display: flow-root; }
 .socket-cap strong { color: var(--ink); }
@@ -582,7 +582,7 @@ a { color: var(--accent); }
 
 .text-link:hover { border-bottom-color: var(--accent); }
 
-/* ===== Testimonials ===== */
+/* ===== Reviews ===== */
 .testimonial-grid { margin-top: 36px; display: grid; gap: 20px; }
 
 .t-card {
@@ -680,7 +680,7 @@ a { color: var(--accent); }
   .strip-grid img { height: 150px; }
 }
 
-/* ===== Testimonials page ===== */
+/* ===== Reviews page ===== */
 .t-masonry {
   margin-top: 36px;
   columns: 1;
