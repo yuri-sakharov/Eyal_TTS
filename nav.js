@@ -37,7 +37,7 @@
 
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (window.innerWidth < 760) closeNav();
+      if (window.innerWidth < 1085) closeNav();
     });
   });
 
@@ -47,7 +47,7 @@
 
   // Re-open desktop nav if resized while mobile nav was open
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 760 && nav.classList.contains('open')) closeNav();
+    if (window.innerWidth >= 1085 && nav.classList.contains('open')) closeNav();
   });
 })();
 
@@ -121,6 +121,12 @@
       function showSuccess() {
         form.classList.add('sent');
         if (btn) btn.disabled = true;
+        // Move focus to the (now visible) confirmation so screen readers announce it
+        var note = form.querySelector('.form-success');
+        if (note) {
+          note.setAttribute('tabindex', '-1');
+          note.focus();
+        }
       }
       function mailtoFallback() {
         var name  = (data.get('name')    || '').trim();
