@@ -271,6 +271,11 @@ a { color: var(--accent); }
 
 .logo .logo-he { font-size: 13px; color: var(--ink-soft); line-height: 1.2; }
 
+/* Hide full logo on narrow mobile */
+@media (max-width: 599px) {
+  .logo { display: none; }
+}
+
 /* ===== Mobile-first nav drawer ===== */
 .main-nav {
   display: flex;
