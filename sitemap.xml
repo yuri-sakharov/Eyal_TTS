@@ -5,7 +5,6 @@
   <url>
     <loc>https://www.eyaltts.com/</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/"/>
     <image:image>
       <image:loc>https://static.wixstatic.com/media/65e506_abe49775fb5849b79ac37eda87bf4d67~mv2.jpg/v1/fill/w_1200,h_960,al_c,q_85,enc_avif,quality_auto/header2025.jpg</image:loc>
@@ -18,7 +17,6 @@
   <url>
     <loc>https://www.eyaltts.com/taiwan</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/taiwan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/taiwan?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/taiwan"/>
     <image:image>
       <image:loc>https://static.wixstatic.com/media/65e506_ec1d5f242b044ad8b13d9fe1c02615e4~mv2.jpg/v1/fill/w_1200,h_960,al_c,q_85,enc_avif,quality_auto/main5.jpg</image:loc>
@@ -31,7 +29,6 @@
   <url>
     <loc>https://www.eyaltts.com/eyalraanan</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/eyalraanan"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/eyalraanan?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/eyalraanan"/>
     <image:image>
       <image:loc>https://static.wixstatic.com/media/65e506_c0a6d009bc5a4062b3e0e76a10d49a03~mv2.jpg/v1/fill/w_900,h_900,al_c,q_85,enc_avif,quality_auto/eyalraanan3.jpg</image:loc>
@@ -44,7 +41,6 @@
   <url>
     <loc>https://www.eyaltts.com/faq</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/faq?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/faq"/>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -53,7 +49,6 @@
   <url>
     <loc>https://www.eyaltts.com/reviews</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/reviews"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/reviews?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/reviews"/>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -62,7 +57,6 @@
   <url>
     <loc>https://www.eyaltts.com/contact</loc>
     <xhtml:link rel="alternate" hreflang="he" href="https://www.eyaltts.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.eyaltts.com/contact?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.eyaltts.com/contact"/>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
