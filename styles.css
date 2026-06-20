@@ -404,7 +404,6 @@ a { color: var(--accent); }
   margin-top: 18px;
   font-size: clamp(19px, 4.5vw, 22px);
   color: var(--ink-soft);
-  max-width: 34ch;
 }
 
 .hero-cta-group { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
