@@ -1,8 +1,24 @@
-/* ===== Eyal TTS — homepage styles (RTL, mobile-first) ===== */
+/* ===== Eyal TTS — site styles (RTL, mobile-first) ===== */
+/*
+  STRUCTURE
+    1. Design tokens (:root)        5. Components (header → footer)
+    2. Base / reset                 6. Responsive overrides
+    3. Layout helpers
+    4. Page-specific helpers
+
+  BREAKPOINTS (mobile-first; px = viewport width)
+    380   header icons collapse → phone only
+    479   phone pill goes icon-only
+    600   stacked grids; section padding trims; logo hides
+    620   socket-compare upsizing (min-width)
+    900   hero / about / contact become 2-col; multi-col card grids
+    1085  nav becomes horizontal bar; 3-col grids; masonry → 2 cols
+*/
 
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
+  /* Color */
   --bg: #FAF7F2;
   --surface: #FFFFFF;
   --ink: #21251E;
@@ -14,23 +30,41 @@
   --accent-line: color-mix(in oklab, var(--accent) 22%, white);
   --wa: #1DA851;
   --wa-deep: #168442;
+  --on-dark: #fff;
+  --on-dark-soft: rgba(255, 255, 255, 0.85);
+
+  /* Radius */
   --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-card: 0 14px 36px rgba(40, 36, 26, 0.14);
+  --shadow-hero: 0 18px 44px rgba(40, 36, 26, 0.16);
+  --shadow-form: 0 18px 50px rgba(0, 0, 0, 0.22);
+
+  /* Type */
   --font-head: 'Frank Ruhl Libre', 'Noto Serif Hebrew', serif;
   --font-body: 'Assistant', 'Helvetica Neue', sans-serif;
   --body-size: 18px;
+
+  /* Layout */
   --maxw: 1080px;
-}
 
-/* ===========================
-   MODERN RESPONSIVE SYSTEM
-   ========================= */
+  /* Fluid spacing scale */
+  --sp-xs: clamp(8px, 2vw, 12px);
+  --sp-sm: clamp(12px, 3vw, 20px);
+  --sp-md: clamp(20px, 4vw, 36px);
+  --sp-lg: clamp(40px, 8vw, 88px);
 
-/* Safe area insets for notched phones */
-:root {
+  /* Safe-area insets (notched phones) */
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* ===== Base / reset ===== */
 
 /* Prevent iOS text-size inflation */
 html {
@@ -44,96 +78,13 @@ input, textarea, select {
   font-size: max(16px, 1em);
 }
 
-/* Better overscroll */
-body {
-  overscroll-behavior-y: none;
-}
-
-/* Fluid spacing tokens */
-:root {
-  --sp-xs: clamp(8px, 2vw, 12px);
-  --sp-sm: clamp(12px, 3vw, 20px);
-  --sp-md: clamp(20px, 4vw, 36px);
-  --sp-lg: clamp(40px, 8vw, 88px);
-}
-
-/* ===========================
-   HEADER ICON STYLES
-   ========================= */
-
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-inline-start: auto;
-}
-
-/* Keep icons + phone together as one contact cluster */
-.header-icons + .header-phone { margin-inline-start: 4px; }
-
-.h-icon {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.h-icon:hover { background: var(--accent-tint); color: var(--accent-deep); }
-
-.h-tooltip {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 50%;
-  transform: translateX(50%);
-  background: var(--accent);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 5px 10px;
-  border-radius: 7px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 20;
-}
-
-.h-tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  right: 50%;
-  transform: translateX(50%);
-  border: 5px solid transparent;
-  border-bottom-color: var(--accent);
-}
-
-.h-icon:hover .h-tooltip,
-.h-icon:focus-visible .h-tooltip { opacity: 1; }
-
-/* Push phone link — no auto margin needed now since header-icons has it */
-.header-phone { margin-inline-start: 8px; }
-
-/* Hide icons on very small screens, show phone only */
-@media (max-width: 380px) {
-  .header-icons { display: none; }
-  .header-phone { margin-inline-start: auto; }
-}
-
-
 body {
   font-family: var(--font-body), sans-serif;
   font-size: var(--body-size);
   line-height: 1.65;
   color: var(--ink);
   background: var(--bg);
+  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -159,9 +110,9 @@ a { color: var(--accent); }
   z-index: 100;
   padding: 10px 16px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transform: translateY(-150%);
   transition: transform 0.15s ease;
@@ -169,9 +120,18 @@ a { color: var(--accent); }
 
 .skip-link:focus { transform: translateY(0); }
 
+/* ===== Layout helpers ===== */
+
 /* Wrap: safe-area aware */
-.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: max(20px, calc(env(safe-area-inset-left, 0px) + 16px)); }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: max(20px, calc(var(--safe-left) + 16px)); }
 .wrap-narrow { max-width: 780px; }
+
+.ltr { direction: ltr; unicode-bidi: isolate; }
+
+.text-soft { color: var(--ink-soft); }
+
+/* ===== Page-specific helpers ===== */
+/* Small one-off classes used by individual pages (spacing, headings, variants). */
 
 .values-stack { display: grid; gap: 28px; margin-top: 28px; }
 
@@ -191,7 +151,7 @@ a { color: var(--accent); }
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius);
-  box-shadow: 0 14px 36px rgba(40, 36, 26, 0.14);
+  box-shadow: var(--shadow-card);
 }
 
 .press-photo-wrap { margin-top: 28px; }
@@ -209,14 +169,13 @@ a { color: var(--accent); }
 
 .socket-row { display: flow-root; }
 .socket-cap strong { color: var(--ink); }
-.text-soft { color: var(--ink-soft); }
 
 .phone-input { text-align: right; }
 
 .contact h1 { font-size: clamp(28px, 6vw, 40px); margin-bottom: 12px; }
 
-.contact-aside p { color: rgba(255, 255, 255, 0.85); font-size: 17px; margin-bottom: 6px; }
-.contact-aside p strong { color: #fff; }
+.contact-aside p { color: var(--on-dark-soft); font-size: 17px; margin-bottom: 6px; }
+.contact-aside p strong { color: var(--on-dark); }
 
 .next-steps {
   margin-top: 28px;
@@ -225,16 +184,14 @@ a { color: var(--accent); }
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.next-steps-title { color: #fff; font-weight: 700; font-size: 17px; margin-bottom: 10px; }
+.next-steps-title { color: var(--on-dark); font-weight: 700; font-size: 17px; margin-bottom: 10px; }
 .next-steps-list {
   padding-inline-start: 18px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--on-dark-soft);
   font-size: 16px;
   display: grid;
   gap: 8px;
 }
-
-.ltr { direction: ltr; unicode-bidi: isolate; }
 
 /* ===== Header ===== */
 .site-header {
@@ -286,7 +243,7 @@ a { color: var(--accent); }
   inset-inline-end: 0;
   bottom: 0;
   background: var(--bg);
-  padding: 8px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+  padding: 8px 16px calc(20px + var(--safe-bottom));
   gap: 2px;
   transform: translateX(100%);
   visibility: hidden;
@@ -349,7 +306,7 @@ a { color: var(--accent); }
   border: none;
   background: none;
   color: var(--ink);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   flex: none;
   -webkit-tap-highlight-color: transparent;
@@ -371,7 +328,7 @@ a { color: var(--accent); }
   min-height: 44px;
   padding: 0 16px;
   border: 1.5px solid var(--accent-line);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--surface);
   color: var(--accent-deep);
   font-weight: 700;
@@ -383,6 +340,73 @@ a { color: var(--accent); }
 .header-phone:hover { background: var(--accent-tint); }
 
 .header-phone svg { flex: none; }
+
+/* Push phone link — header-icons already carries the auto margin */
+.header-phone { margin-inline-start: 8px; }
+
+/* Header icon buttons + hover tooltip */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-start: auto;
+}
+
+/* Keep icons + phone together as one contact cluster */
+.header-icons + .header-phone { margin-inline-start: 4px; }
+
+.h-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.h-icon:hover { background: var(--accent-tint); color: var(--accent-deep); }
+
+.h-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--accent);
+  color: var(--on-dark);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 7px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 20;
+}
+
+.h-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  border: 5px solid transparent;
+  border-bottom-color: var(--accent);
+}
+
+.h-icon:hover .h-tooltip,
+.h-icon:focus-visible .h-tooltip { opacity: 1; }
+
+/* Hide icons on very small screens, show phone only */
+@media (max-width: 380px) {
+  .header-icons { display: none; }
+  .header-phone { margin-inline-start: auto; }
+}
 
 /* ===== Hero ===== */
 .hero { padding-block: 40px 56px; }
@@ -418,7 +442,7 @@ a { color: var(--accent); }
   border: none;
   border-radius: 14px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-dark);
   font-family: var(--font-body), sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -455,8 +479,8 @@ a { color: var(--accent); }
   height: clamp(300px, 60vw, 420px);
   display: block;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 18px 44px rgba(40, 36, 26, 0.16);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
 }
 
 /* ===== Credentials strip ===== */
@@ -570,7 +594,7 @@ a { color: var(--accent); }
   object-fit: cover;
   object-position: center top;
   border-radius: var(--radius);
-  box-shadow: 0 14px 36px rgba(40, 36, 26, 0.14);
+  box-shadow: var(--shadow-card);
 }
 
 .about-text p { margin-bottom: 14px; }
@@ -752,10 +776,10 @@ a { color: var(--accent); }
 }
 
 /* ===== Contact ===== */
-.contact { background: var(--accent-deep); color: #fff; }
+.contact { background: var(--accent-deep); color: var(--on-dark); }
 
 
-.contact h2, .contact .section-lede { color: #fff; }
+.contact h2, .contact .section-lede { color: var(--on-dark); }
 
 .contact .section-lede { opacity: 0.92; }
 
@@ -781,7 +805,7 @@ a { color: var(--accent); }
   padding: 28px 24px;
   display: grid;
   gap: 16px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--shadow-form);
 }
 
 .field { display: grid; gap: 6px; }
@@ -794,7 +818,7 @@ a { color: var(--accent); }
   color: var(--ink);
   background: var(--bg);
   border: 1.5px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 12px 14px;
   min-height: 48px;
   width: 100%;
@@ -814,7 +838,7 @@ a { color: var(--accent); }
   display: none;
   background: var(--accent-tint);
   border: 1.5px solid var(--accent-line);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 14px 16px;
   font-weight: 700;
   color: var(--accent-deep);
@@ -834,7 +858,7 @@ a { color: var(--accent); }
   padding: 0 18px;
   border-radius: 12px;
   border: 1.5px solid rgba(255, 255, 255, 0.35);
-  color: #fff;
+  color: var(--on-dark);
   text-decoration: none;
   font-weight: 700;
   font-size: 17px;
@@ -867,7 +891,7 @@ a { color: var(--accent); }
   gap: 8px;
   min-height: 44px;
   padding: 0 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--surface);
   border: 1.5px solid var(--line);
   color: var(--ink);
@@ -916,13 +940,13 @@ a { color: var(--accent); }
 
 .faq-list details p + ul { margin-top: -8px; }
 
-.answer-note {
+.faq-list details p.answer-note {
   font-size: 15.5px;
   background: var(--accent-tint);
   border-radius: 8px;
-  padding: 10px 14px !important;
+  padding: 10px 14px;
   margin: 0 20px 18px;
-  color: var(--accent-deep) !important;
+  color: var(--accent-deep);
   font-weight: 600;
 }
 
@@ -931,8 +955,8 @@ a { color: var(--accent); }
 .faq-cta .wrap {
   max-width: 800px;
   background: var(--accent-deep);
-  color: #fff;
-  border-radius: 20px;
+  color: var(--on-dark);
+  border-radius: var(--radius-lg);
   padding: 40px 32px;
   text-align: center;
   display: grid;
@@ -966,17 +990,17 @@ a { color: var(--accent); }
 /* Float WA — safe area aware */
 .wa-float {
   position: fixed;
-  bottom: max(18px, calc(env(safe-area-inset-bottom, 0px) + 14px));
-  left: max(18px, calc(env(safe-area-inset-left, 0px) + 14px));
+  bottom: max(18px, calc(var(--safe-bottom) + 14px));
+  left: max(18px, calc(var(--safe-left) + 14px));
   z-index: 60;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   min-height: 54px;
   padding: 0 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--wa);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 700;
   font-size: 17px;
   text-decoration: none;
@@ -990,13 +1014,15 @@ a { color: var(--accent); }
 @media (min-width: 1085px) {
   .t-masonry { columns: 2; }
   .nav-toggle { display: none; }
-  .nav-backdrop { display: none !important; }
+  .nav-backdrop,
+  .nav-backdrop.open { display: none; }
 
-  .main-nav {
+  .main-nav,
+  .main-nav.open {
     position: static;
     flex-direction: row;
-    transform: none !important;
-    visibility: visible !important;
+    transform: none;
+    visibility: visible;
     background: transparent;
     padding: 0;
     border: none;
@@ -1012,7 +1038,7 @@ a { color: var(--accent); }
     font-size: 16px;
     font-weight: 600;
     border-bottom: none;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     padding: 0 14px;
   }
 
