@@ -227,9 +227,10 @@ a { color: var(--accent); }
 
 .logo .logo-he { font-size: 13px; color: var(--ink-soft); line-height: 1.2; }
 
-/* Hide full logo on narrow mobile */
+/* Condense logo on narrow mobile — hide subtitle, shrink brand name */
 @media (max-width: 610px) {
-  .logo { display: none; }
+  .logo-he { display: none; }
+  .logo .logo-en { font-size: 17px; }
 }
 
 /* ===== Mobile-first nav drawer ===== */
@@ -621,6 +622,7 @@ a { color: var(--accent); }
   object-position: center top;
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
+  background: var(--accent-tint);
 }
 
 .about-text p { margin-bottom: 14px; }
@@ -639,7 +641,7 @@ a { color: var(--accent); }
 .text-link:hover { border-bottom-color: var(--accent); }
 
 /* ===== Reviews ===== */
-.testimonial-grid { margin-top: 36px; display: grid; gap: 20px; }
+.testimonial-grid { margin-top: 36px; display: grid; gap: 20px; align-items: start; }
 
 .t-card {
   background: var(--surface);
@@ -1067,6 +1069,24 @@ a { color: var(--accent); }
   .hero-photo { height: 480px; }
   .about-grid { grid-template-columns: 1fr 1.1fr; gap: 56px; }
   .contact-grid { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+}
+
+/* Clear the fixed WA button on mobile so it never covers page content */
+@media (max-width: 899px) {
+  body { padding-bottom: 78px; }
+}
+
+/* FAQ category chips: horizontal scroll on small screens */
+@media (max-width: 600px) {
+  .cat-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+  .cat-nav::-webkit-scrollbar { display: none; }
+  .cat-nav a { flex-shrink: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
