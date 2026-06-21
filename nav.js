@@ -1,58 +1,6 @@
 /* ===================================================
-   Eyal TTS — shared hamburger nav
-   Attach after HTML; works on all pages.
-   =================================================== */
-(function () {
-  var toggle   = document.getElementById('nav-toggle');
-  var nav      = document.getElementById('main-nav');
-  var backdrop = document.getElementById('nav-backdrop');
-  if (!toggle || !nav) return;
-
-  var HAMBURGER = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-  var CLOSE    = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>';
-
-  function openNav() {
-    nav.classList.add('open');
-    if (backdrop) backdrop.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'סגור תפריט');
-    toggle.innerHTML = CLOSE;
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeNav() {
-    nav.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'פתח תפריט');
-    toggle.innerHTML = HAMBURGER;
-    document.body.style.overflow = '';
-  }
-
-  toggle.addEventListener('click', function () {
-    nav.classList.contains('open') ? closeNav() : openNav();
-  });
-
-  if (backdrop) backdrop.addEventListener('click', closeNav);
-
-  nav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (window.innerWidth < 1085) closeNav();
-    });
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeNav();
-  });
-
-  // Re-open desktop nav if resized while mobile nav was open
-  window.addEventListener('resize', function () {
-    if (window.innerWidth >= 1085 && nav.classList.contains('open')) closeNav();
-  });
-})();
-
-/* ===================================================
-   Testimonial photo — click to expand to full card
+   Eyal TTS — photo: click to expand to full card
+   (Nav is CSS-only — no JS.)
    =================================================== */
 (function () {
   var photos = document.querySelectorAll('.t-photo');
@@ -97,7 +45,7 @@
 })();
 
 /* ===================================================
-   Contact forms — real lead delivery (no backend)
+   Eyal TTS — contact form lead delivery (no backend)
    Works for every visitor via email — WhatsApp not required.
    1. Primary: POST to Web3Forms (free, server emails Eyal).
       → paste your key in ACCESS_KEY (get it free at web3forms.com).
